@@ -7,8 +7,8 @@ import Providers from "@/components/Providers";
 const inter = Rethink_Sans({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Kanywani Byaruhanga",
-  description: "Kanywani Byaruhanga",
+  title: "Faith Christian School Foundation",
+  description: "Supporting Faith Christian School's mission to provide quality Christian education.",
 };
 export default function RootLayout({
   children,

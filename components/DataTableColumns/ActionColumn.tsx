@@ -24,12 +24,7 @@ import { MoreHorizontal, Pencil, Trash } from "lucide-react";
 import toast from "react-hot-toast";
 import Link from "next/link";
 import { deleteUser } from "@/actions/users";
-import { deleteBlogById } from "@/actions/blogs";
-import { deleteParish } from "@/actions/parishes";
-import { deletePromise } from "@/actions/promise";
-import { deleteMember } from "@/actions/members";
-import { deleteNosigaki } from "@/actions/nosigaki";
-import { deleteVillage } from "@/actions/villages";
+
 
 type ActionColumnProps = {
   row: any;
@@ -49,47 +44,6 @@ export default function ActionColumn({
     try {
       if (model === "user") {
         const res = await deleteUser(id);
-        if (res?.ok) {
-          window.location.reload();
-        }
-        toast.success(`${model} Deleted Successfully`);
-      } else if (model === "blog") {
-        const res = await deleteBlogById(id);
-        if (res?.ok) {
-          window.location.reload();
-        }
-        toast.success(`${model} Deleted Successfully`);
-      }
-       else if (model === "member") {
-        const res = await deleteMember(id);
-        if (res?.ok) {
-          window.location.reload();
-        }
-        toast.success(`${model} Deleted Successfully`);
-      }
-         else if (model === "village") {
-        const res = await deleteVillage(id);
-        if (res?.ok) {
-          window.location.reload();
-        }
-        toast.success(`${model} Deleted Successfully`);
-      }
-      else if (model === "promises") {
-        const res = await deletePromise(id);
-        if (res?.ok) {
-          window.location.reload();
-        }
-        toast.success(`${model} Deleted Successfully`);
-      }
-      else if (model === "nosigaki") {
-        const res = await deleteNosigaki(id);
-        if (res?.ok) {
-          window.location.reload();
-        }
-        toast.success(`${model} Deleted Successfully`);
-      }
-      else if (model === "parish") {
-        const res = await deleteParish(id);
         if (res?.ok) {
           window.location.reload();
         }

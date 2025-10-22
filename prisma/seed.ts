@@ -103,9 +103,6 @@ async function cleanDatabase() {
       // Delete all accounts (if you have them)
       await tx.account.deleteMany({});
 
-      // Delete all Blogs and Blog cats (if you have them)
-      await tx.blog.deleteMany({});
-      await tx.blogCategory.deleteMany({});
 
       // Delete all Savings and Categories  (if you have them
       // await tx.category.deleteMany({});
