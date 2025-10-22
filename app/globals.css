@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 230 60% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 230 60% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 60% 10%;
+
+    /* 🎓 School theme (Blue + Gold) */
+    --primary: 230 85% 30%; /* Deep navy blue */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 47 95% 52%; /* Gold / yellow accent */
+    --secondary-foreground: 230 80% 15%;
+
+    --muted: 230 20% 90%;
+    --muted-foreground: 230 25% 35%;
+
+    --accent: 210 85% 55%; /* light blue accent */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 230 20% 85%;
+    --input: 230 20% 85%;
+    --ring: 47 95% 52%; /* gold highlight */
+
+    --radius: 0.3rem;
+
+    /* Chart palette */
+    --chart-1: 230 85% 30%;
+    --chart-2: 47 95% 52%;
+    --chart-3: 210 85% 55%;
+    --chart-4: 230 70% 40%;
+    --chart-5: 47 80% 45%;
+  }
+
+  .dark {
+    --background: 230 60% 10%;
+    --foreground: 47 95% 90%;
+
+    --card: 230 55% 12%;
+    --card-foreground: 47 95% 90%;
+
+    --popover: 230 55% 12%;
+    --popover-foreground: 47 95% 90%;
+
+    --primary: 47 95% 52%; /* Gold primary for dark mode */
+    --primary-foreground: 230 60% 10%;
+
+    --secondary: 230 85% 25%;
+    --secondary-foreground: 47 95% 90%;
+
+    --muted: 230 50% 18%;
+    --muted-foreground: 47 40% 75%;
+
+    --accent: 210 85% 55%;
+    --accent-foreground: 230 60% 10%;
+
+    --destructive: 0 62.8% 40.6%;
+    --destructive-foreground: 47 95% 90%;
+
+    --border: 230 40% 25%;
+    --input: 230 40% 25%;
+    --ring: 47 95% 52%;
+
+    --chart-1: 47 95% 52%;
+    --chart-2: 230 85% 30%;
+    --chart-3: 210 85% 55%;
+    --chart-4: 47 80% 45%;
+    --chart-5: 230 70% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
