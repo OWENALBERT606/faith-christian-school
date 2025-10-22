@@ -25,6 +25,8 @@ import toast from "react-hot-toast";
 import Link from "next/link";
 import { deleteUser } from "@/actions/users";
 import { deleteMember } from "@/actions/members";
+import { deleteCategory } from "@/actions/categories";
+import { deleteEvent } from "@/actions/events";
 
 
 type ActionColumnProps = {
@@ -49,7 +51,20 @@ export default function ActionColumn({
           window.location.reload();
         }
         toast.success(`${model} Deleted Successfully`);
-      }else if (model === "team") {
+      } else if (model === "category") {
+        const res = await deleteCategory(id);
+        if (res?.ok) {
+          window.location.reload();
+        }
+        toast.success(`${model} Deleted Successfully`);
+      } else if (model === "event") {
+        const res = await deleteEvent(id);
+        if (res?.ok) {
+          window.location.reload();
+        }
+        toast.success(`${model} Deleted Successfully`);
+      }
+      else if (model === "team") {
         const res = await deleteMember(id);
         if (res?.ok) {
           window.location.reload();

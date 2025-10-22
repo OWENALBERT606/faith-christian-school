@@ -121,6 +121,13 @@ export const sidebarLinks: ISidebarLink[] = [
     permission: "team.read",
   },
   {
+    title: "Categories",
+    icon: Users,
+    dropdown: false,
+    href: "/dashboard/categories",
+    permission: "categories.read",
+  },
+  {
     title: "Events",
     icon: CalendarHeart,
     dropdown: false,
