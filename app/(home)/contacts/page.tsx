@@ -12,7 +12,7 @@ export default function ContactPage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-primary text-primary-foreground py-12">
+        <section className="bg-primary text-primary-foreground py-24">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">Get in Touch</h1>
@@ -94,10 +94,10 @@ export default function ContactPage() {
                       <div>
                         <div className="font-semibold mb-1">Email</div>
                         <a
-                          href="mailto:info@hopefoundation.org"
+                          href="mailto:faithchristianschool2@gmail.com"
                           className="text-sm text-muted-foreground hover:text-primary"
                         >
-                          info@hopefoundation.org
+                          faithchristianschool2@gmail.com
                         </a>
                       </div>
                     </div>
@@ -107,7 +107,7 @@ export default function ContactPage() {
                       <div>
                         <div className="font-semibold mb-1">Phone</div>
                         <a href="tel:+15551234567" className="text-sm text-muted-foreground hover:text-primary">
-                          +1 (555) 123-4567
+                          +256 757549225
                         </a>
                       </div>
                     </div>
@@ -117,11 +117,11 @@ export default function ContactPage() {
                       <div>
                         <div className="font-semibold mb-1">Address</div>
                         <p className="text-sm text-muted-foreground">
-                          123 Hope Street
+                          Mubende Central Region
                           <br />
-                          City, State 12345
+                          Mubende
                           <br />
-                          United States
+                          Uganda
                         </p>
                       </div>
                     </div>
