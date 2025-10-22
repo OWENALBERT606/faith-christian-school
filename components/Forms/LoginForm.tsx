@@ -57,7 +57,7 @@ export default function LoginForm() {
     }
   }
   return (
-    <div className="w-full lg:grid h-screen lg:min-h-[600px] lg:grid-cols-2 relative ">
+    <div className="w-full lg:grid h-screen lg:min-h-[600px]  relative ">
       <div className="flex items-center justify-center py-12">
         <div className="mx-auto grid w-[400px] gap-6 mt-10 md:mt-0">
           <div className="absolute left-1/3 top-14 md:top-5 md:left-5">
@@ -104,16 +104,13 @@ export default function LoginForm() {
               Not a Registered ?{" "}
               <Link
                 href="/register"
-                className="font-semibold leading-6 text-yellow-600 hover:text-yellow-500"
+                className="font-semibold leading-6 text-blue-600 hover:text-blue-500"
               >
                 Create Account
               </Link>
             </p>
           </div>
         </div>
-      </div>
-      <div className=" bg-muted relative]">
-        <CustomCarousel />
       </div>
     </div>
   );
