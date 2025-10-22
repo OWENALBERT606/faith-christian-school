@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
+import { Link, Menu, X } from "lucide-react"
 import Image from "next/image"
 
 export function Navigation() {
@@ -24,6 +24,7 @@ export function Navigation() {
     { name: "Campaigns", href: "/campaigns" },
     { name: "Stories", href: "/stories" },
     { name: "Contact", href: "/contacts" },
+    { name: "Donate", href: "/donate" },
     
   ]
 
@@ -59,7 +60,6 @@ export function Navigation() {
                 {link.name}
               </a>
             ))}
-            <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">Donate</Button>
           </div>
 
           <button className="md:hidden p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
@@ -85,7 +85,9 @@ export function Navigation() {
                 {link.name}
               </a>
             ))}
-            <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground w-full">Donate</Button>
+            <Link href="/donate" className="w-full">
+              <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground w-full">Donate</Button>
+            </Link>
           </div>
         </div>
       )}

@@ -162,7 +162,7 @@ export default function ContactPage() {
         </section>
 
         {/* Map Section */}
-        <section className="py-16 bg-muted">
+        <section className="py-16 bg-muted px-4 md:px-12 lg:px-24">
           <div className="container mx-auto px-4">
             <Card className="overflow-hidden">
               <div className="aspect-video bg-secondary flex items-center justify-center">
