@@ -24,6 +24,7 @@ import { MoreHorizontal, Pencil, Trash } from "lucide-react";
 import toast from "react-hot-toast";
 import Link from "next/link";
 import { deleteUser } from "@/actions/users";
+import { deleteMember } from "@/actions/members";
 
 
 type ActionColumnProps = {
@@ -48,7 +49,12 @@ export default function ActionColumn({
           window.location.reload();
         }
         toast.success(`${model} Deleted Successfully`);
-      }
+      }else if (model === "team") {
+        const res = await deleteMember(id);
+        if (res?.ok) {
+          window.location.reload();
+        }
+        toast.success(`${model} Deleted Successfully`);}
     } catch (error) {
       console.log(error);
       toast.error("Category Couldn't be deleted");

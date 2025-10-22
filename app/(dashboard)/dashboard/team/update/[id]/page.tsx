@@ -12,7 +12,7 @@ export default async function page({
   const member = await getMemberById(id);
   return (
     <div className="p-8">
-      <NewMemberForm/>
+      <NewMemberForm initialData={member}/>
     </div>
   );
 }
