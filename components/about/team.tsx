@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { Linkedin, Mail } from "lucide-react"
 
-export function TeamMembers() {
+export function TeamMembers({members}:{members:any}) {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -25,44 +25,7 @@ export function TeamMembers() {
     return () => observer.disconnect()
   }, [])
 
-  const team = [
-    {
-      name: "Michael Chen",
-      role: "Director of Programs",
-      image: "/professional-asian-man-portrait.png",
-      bio: "15+ years in nonprofit management",
-    },
-    {
-      name: "Emily Rodriguez",
-      role: "Community Outreach Manager",
-      image: "/professional-latina-woman-portrait.png",
-      bio: "Passionate about community engagement",
-    },
-    {
-      name: "David Thompson",
-      role: "Finance Director",
-      image: "/professional-man-portrait-glasses.png",
-      bio: "Ensuring transparency and accountability",
-    },
-    {
-      name: "Aisha Patel",
-      role: "Healthcare Coordinator",
-      image: "/professional-indian-woman-portrait.png",
-      bio: "Former nurse with a heart for service",
-    },
-    {
-      name: "James Wilson",
-      role: "Education Programs Lead",
-      image: "/professional-black-man-portrait.png",
-      bio: "Dedicated to empowering through education",
-    },
-    {
-      name: "Maria Santos",
-      role: "Volunteer Coordinator",
-      image: "/professional-woman-portrait-smile.jpg",
-      bio: "Building bridges through volunteerism",
-    },
-  ]
+  
 
   return (
     <section ref={sectionRef} className="py-20 bg-muted/30">
@@ -79,7 +42,7 @@ export function TeamMembers() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {team.map((member, index) => (
+          {members.map((member:any, index:any) => (
             <div
               key={member.name}
               className={`transition-all duration-700 ${
@@ -90,7 +53,7 @@ export function TeamMembers() {
               <div className="bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 group border border-border">
                 <div className="relative h-80 overflow-hidden">
                   <Image
-                    src={member.image || "/placeholder.svg"}
+                    src={member.photo || "/placeholder.svg"}
                     alt={member.name}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -106,8 +69,8 @@ export function TeamMembers() {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-foreground mb-1">{member.name}</h3>
-                  <p className="text-secondary font-semibold mb-2">{member.role}</p>
-                  <p className="text-muted-foreground text-sm">{member.bio}</p>
+                  <p className="text-secondary font-semibold mb-2">{member.position}</p>
+                  <p className="text-muted-foreground text-sm">{member.description}</p>
                 </div>
               </div>
             </div>
