@@ -96,6 +96,7 @@ model Category {
   name      String   @unique
   slug      String   @unique
   events     Event[]
+  campaigns  Campaign[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -127,5 +128,38 @@ model Event {
   updatedAt       DateTime     @updatedAt
 
   @@index([status])
+}
+
+
+// schema.prisma
+
+enum CampaignStatus {
+  ACTIVE
+  COMPLETED
+  CANCELLED
+  PAUSED
+}
+
+model Campaign {
+  id              String          @id @default(cuid())
+  title           String
+  categoryId      String?
+  category        Category?       @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  image           String
+  description     String
+  longDescription String    
+  goal            Int
+  raised          Int             @default(0)
+  supporters      Int             @default(0)
+  daysLeft        Int             @default(0)
+  startDate       String
+  endDate         String
+  impact          String[]        // Postgres text[]
+  updates         Json            // [{ date, title, content }]
+  status          CampaignStatus  @default(ACTIVE)
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+  @@index([status])
+  @@index([categoryId])
 }
 

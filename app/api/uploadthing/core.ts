@@ -18,6 +18,12 @@ export const ourFileRouter = {
       return { uploadedBy: "ADMIN" };
     }
   ),
+  campaignImage: f({ image: { maxFileSize: "2MB" } }).onUploadComplete(
+    async ({ metadata, file }) => {
+      console.log("file url", file.url);
+      return { uploadedBy: "ADMIN" };
+    }
+  ),
   pdfUrl: f({ pdf: { maxFileSize: "8MB" } }).onUploadComplete(
     async ({ metadata, file }) => {
       console.log("file url", file.url);

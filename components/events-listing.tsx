@@ -22,7 +22,7 @@ export default async function EventsListing({events}:{events:any}) {
         <section className="bg-primary text-primary-foreground py-20">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
+              <h1 className="text-4xl mt-8 md:text-5xl font-bold mb-6 text-balance">
                 Join Our Events
               </h1>
               <p className="text-lg md:text-xl leading-relaxed opacity-90">
