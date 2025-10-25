@@ -97,6 +97,7 @@ model Category {
   slug      String   @unique
   events     Event[]
   campaigns  Campaign[]
+  stories    Story[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -130,7 +131,7 @@ model Event {
   @@index([status])
 }
 
-
+  
 // schema.prisma
 
 enum CampaignStatus {
@@ -163,3 +164,26 @@ model Campaign {
   @@index([categoryId])
 }
 
+model Story {
+  id           String    @id @default(cuid())
+  title        String
+  slug         String    @unique
+  categoryId   String
+  category     Category  @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  authorName   String
+  authorImage  String
+  authorBio    String
+  date         String      // e.g. "March 5, 2025"
+  readTime     String      // e.g. "5 min read"
+  image        String
+  content      String    @db.Text
+  likes        Int       @default(0)
+  comments     Int       @default(0)
+  tags         String[]  // Postgres array
+
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@index([categoryId])
+  @@index([slug])
+}

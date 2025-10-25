@@ -28,6 +28,7 @@ import { deleteMember } from "@/actions/members";
 import { deleteCategory } from "@/actions/categories";
 import { deleteEvent } from "@/actions/events";
 import { deleteCampaign } from "@/actions/campaigns";
+import { deleteStory } from "@/actions/stories";
 
 
 type ActionColumnProps = {
@@ -52,7 +53,14 @@ export default function ActionColumn({
           window.location.reload();
         }
         toast.success(`${model} Deleted Successfully`);
-      } else if (model === "category") {
+      }else if (model === "story") {
+        const res = await deleteStory(id);
+        if (res?.ok) {
+          window.location.reload();
+        }
+        toast.success(`${model} Deleted Successfully`);
+      }
+       else if (model === "category") {
         const res = await deleteCategory(id);
         if (res?.ok) {
           window.location.reload();
