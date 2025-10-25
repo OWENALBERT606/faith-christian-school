@@ -179,14 +179,6 @@ export default function StoryForm({ editingId, initialData, categories }: StoryF
               
                 />
 
-                {/* Slug (optional; server ensures uniqueness if blank) */}
-                <TextInput
-                  register={register}
-                  errors={errors}
-                  label="Slug (optional)"
-                  name="slug"
-                />
-
                 {/* Category */}
                 <div className="flex flex-col gap-2">
                   <label className="text-sm font-medium text-foreground">Category</label>
