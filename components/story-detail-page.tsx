@@ -13,7 +13,7 @@ export default async function StoryDetailPage({story}:{story:any}) {
       <main className="flex-1">
         {/* Hero Image */}
         <div className="relative h-[400px] md:h-[500px] overflow-hidden">
-          <img src="/close-up-team-hand-shake.jpg" alt={story.title} className="object-cover w-full h-full" />
+          <img src={story.image} alt={story.title} className="object-cover w-full h-full" />
           <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
         </div>
 

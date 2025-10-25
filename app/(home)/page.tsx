@@ -13,17 +13,26 @@ import { CTASection } from '@/components/site/cta-section'
 import { StoriesSection } from '@/components/site/stories-sction'
 import { CampaignsSection } from '@/components/site/campaigns-section'
 import { EventsSection } from '@/components/site/events-section'
+import { getEvents } from '@/actions/events'
+import { getCampaigns } from '@/actions/campaigns'
+import { getStories } from '@/actions/stories'
 
-export default function Page() {
+export default async function Page() {
+      const campaigns = (await getCampaigns()) ?? [];
+      const events = (await getEvents()) ?? [];
+      const stories = (await getStories()) ?? [];
+          
+      
+  
   return (
     <div>
       <HeroSection />
       <AboutSection />
       <ProgramsSection />
       <ValuesSection />
-      <StoriesSection />
-      <CampaignsSection />
-      <EventsSection />
+      <StoriesSection stories={stories} />
+      <CampaignsSection campaigns={campaigns} />
+      <EventsSection events={events} />
       <StatsSection />
       <TestimonialsSection />
       <CTASection />

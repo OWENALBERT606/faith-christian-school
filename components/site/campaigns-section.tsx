@@ -4,43 +4,18 @@ import { useEffect, useRef, useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
+import Link from "next/link"
 
-const campaigns = [
-  {
-    id: 1,
-    title: "Build Schools in Rural Areas",
-    description: "Help us construct three new schools to provide quality education to 1,000 children.",
-    goal: 100000,
-    raised: 67500,
-    supporters: 342,
-    daysLeft: 23,
-    image: "/african-children-enjoying-life.jpg",
-  },
-  {
-    id: 2,
-    title: "Emergency Relief Fund",
-    description: "Provide immediate assistance to families affected by recent natural disasters.",
-    goal: 50000,
-    raised: 43200,
-    supporters: 521,
-    daysLeft: 12,
-    image: "/closeup-shot-boy-doctor-wearing-sanitary-mask.jpg",
-  },
-  {
-    id: 3,
-    title: "Clean Water Initiative",
-    description: "Install water purification systems in 20 villages to ensure access to safe drinking water.",
-    goal: 75000,
-    raised: 28900,
-    supporters: 198,
-    daysLeft: 45,
-    image: "/UN0211928.jpg",
-  },
-]
 
-export function CampaignsSection() {
+export function CampaignsSection({campaigns}: {campaigns:any}) {
   const [visibleCards, setVisibleCards] = useState<number[]>([])
-  const sectionRef = useRef<HTMLElement>(null)
+  const sectionRef = useRef<HTMLElement>(null);
+
+  function truncateWords(str = "", count = 25) {
+  const words = str.trim().split(/\s+/);
+  const out = words.slice(0, count).join(" ");
+  return words.length > count ? out + "…" : out;
+}
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -77,7 +52,7 @@ export function CampaignsSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {campaigns.map((campaign, index) => {
+          {campaigns.slice(0,3).map((campaign:any, index:any) => {
             const percentage = (campaign.raised / campaign.goal) * 100
 
             return (
@@ -101,7 +76,7 @@ export function CampaignsSection() {
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl font-semibold text-card-foreground mb-3 text-balance">{campaign.title}</h3>
-                    <p className="text-muted-foreground mb-6 text-pretty leading-relaxed">{campaign.description}</p>
+                    <p className="text-muted-foreground mb-6 text-pretty leading-relaxed"> {truncateWords(campaign.description, 15)}</p>
 
                     <div className="space-y-4">
                       <div>
@@ -119,7 +94,7 @@ export function CampaignsSection() {
                         <span>{percentage.toFixed(0)}% funded</span>
                       </div>
 
-                      <Button className="w-full">Donate Now</Button>
+                      <Link href={`/campaigns/${campaign.id}`}  className="w-full flex justify-center text-center bg-yellow-400 p-2">Donate Now</Link>
                     </div>
                   </div>
                 </Card>

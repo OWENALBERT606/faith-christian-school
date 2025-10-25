@@ -4,32 +4,10 @@ import { useEffect, useRef, useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
-const stories = [
-  {
-    id: 1,
-    title: "Empowering Rural Communities",
-    excerpt: "How we brought clean water and education to 500 families in remote villages.",
-    image: "/malawi_chop.jpg",
-    impact: "500 families",
-  },
-  {
-    id: 2,
-    title: "Education Changes Lives",
-    excerpt: "Meet Sarah, who became the first in her family to attend university through our scholarship program.",
-    image: "/071209_africa_hmed_12p.jpg",
-    impact: "200 scholarships",
-  },
-  {
-    id: 3,
-    title: "Healthcare for All",
-    excerpt: "Our mobile clinics have provided essential medical care to thousands in underserved areas.",
-    image: "/pexels-denis-ngai-4483669-scaled (1).jpg",
-    impact: "5,000 patients",
-  },
-]
 
-export function StoriesSection() {
+export function StoriesSection({stories}: {stories:any}) {
   const [visibleCards, setVisibleCards] = useState<number[]>([])
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -68,7 +46,7 @@ export function StoriesSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {stories.map((story, index) => (
+          {stories.slice(0,3).map((story:any, index:any) => (
             <div
               key={story.id}
               data-story-card
@@ -90,10 +68,10 @@ export function StoriesSection() {
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-card-foreground mb-3 text-balance">{story.title}</h3>
                   <p className="text-muted-foreground mb-4 text-pretty leading-relaxed">{story.excerpt}</p>
-                  <Button variant="ghost" className="group/btn p-0 h-auto font-medium text-primary">
+                  <Link href={`/stories/${story.id}`} className="group/btn flex gap-2 p-2 justify-center text-center items-center bg-yellow-400 rounded-lg h-auto font-medium text-primary">
                     Read More
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                  </Button>
+                  </Link>
                 </div>
               </Card>
             </div>

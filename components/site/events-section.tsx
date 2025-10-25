@@ -5,55 +5,8 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Calendar, MapPin, Users } from "lucide-react"
 
-const events = [
-  {
-    id: 1,
-    title: "Annual Charity Gala",
-    description: "Join us for an evening of inspiration, entertainment, and fundraising for our education programs.",
-    date: "March 15, 2025",
-    time: "6:00 PM - 10:00 PM",
-    location: "Grand Ballroom, City Center",
-    attendees: 250,
-    image: "/pexels-denis-ngai-4483669-scaled (1).jpg",
-    category: "Fundraiser",
-  },
-  {
-    id: 2,
-    title: "Community Volunteer Day",
-    description: "Help us build a playground for children in the Riverside neighborhood.",
-    date: "March 22, 2025",
-    time: "9:00 AM - 4:00 PM",
-    location: "Riverside Community Park",
-    attendees: 85,
-    image: "/close-up-community-concept-with-hands.jpg",
-    category: "Volunteer",
-  },
-  {
-    id: 3,
-    title: "Health & Wellness Workshop",
-    description: "Free health screenings and wellness education for underserved communities.",
-    date: "April 5, 2025",
-    time: "10:00 AM - 3:00 PM",
-    location: "Community Health Center",
-    attendees: 120,
-    image: "/closeup-shot-boy-doctor-wearing-sanitary-mask.jpg",
-    category: "Workshop",
-  },
-  {
-    id: 4,
-    title: "Youth Leadership Summit",
-    description: "Empowering the next generation of leaders through mentorship and skill-building activities.",
-    date: "April 18, 2025",
-    time: "1:00 PM - 6:00 PM",
-    location: "Innovation Hub",
-    attendees: 150,
-    category: "Education",
-    image: "/close-up-women-holding-each-other.jpg",
 
-  },
-]
-
-export function EventsSection() {
+export function EventsSection({events}: {events:any}) {
   const [visibleCards, setVisibleCards] = useState<number[]>([])
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -92,7 +45,7 @@ export function EventsSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {events.map((event, index) => (
+          {events.map((event:any, index:any) => (
             <div
               key={event.id}
               data-event-card
@@ -109,7 +62,7 @@ export function EventsSection() {
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-medium">
-                      {event.category}
+                      {event.category.name}
                     </div>
                   </div>
                   <div className="p-6 md:w-3/5 flex flex-col">
