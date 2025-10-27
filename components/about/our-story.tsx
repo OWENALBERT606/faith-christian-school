@@ -36,24 +36,13 @@ export function OurStory() {
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">Our Story</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Faith Christian School Foundation was born from a simple yet powerful vision: to create lasting change
-                in communities that need it most. What started as a small group of dedicated volunteers has grown into a
-                comprehensive organization serving thousands of families each year.
+                Faith Christian School Ministries began not in a boardroom but outside the treeshade, but in the heart of faithful families in year 2016. Kwiringira Joel and a group of parents and church leaders envisioned a school where academic excellence and biblical truth would be inseparable. <br />
+
+Driven by the mission to train up a child in the way he should go (Proverbs 22:6), we started with humble beginnings—wooden classrooms from nursery to class 5. Through decades of praying and God’s unwavering provision, the vision has flourished. <br />
+
+We want to begin building a 3-story classroom block consisting of 15 classrooms and dormitories. What began as a single classroom has grown into a vibrant ministry serving students from preschool through 12th grade. Each new building stands as a statement to God’s faithfulness. Our history is the foundation upon which we stand. But our mission remains the same—to partner with families to educate and inspire the next generation of Christian leaders. We are honored to carry this legacy of faith forward.
               </p>
-              <p>
-                Our journey began in 2010 when our founder recognized the urgent need for faith-based community support
-                in underserved areas. With nothing but determination and a deep commitment to service, we launched our
-                first program providing meals and educational resources to local families.
-              </p>
-              <p>
-                Over the years, we've expanded our reach and impact, developing programs that address healthcare, food
-                security, education access, shelter, and family support. Each initiative is rooted in our core belief
-                that every person deserves dignity, opportunity, and hope.
-              </p>
-              <p>
-                Today, we're proud to serve as a trusted partner to communities across the region, working alongside
-                local leaders, volunteers, and donors who share our vision of a more compassionate and equitable world.
-              </p>
+             
             </div>
           </div>
 
