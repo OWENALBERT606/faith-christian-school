@@ -29,14 +29,14 @@ export function MissionVision() {
       icon: Target,
       title: "Our Mission",
       description:
-        "To empower underserved communities through faith-based programs that provide essential resources, education, and support, enabling individuals and families to break the cycle of poverty and build sustainable futures.",
+        "We envision graduates who are critical thinkers, effective communicators, and servant-hearted leaders, fully prepared to engage culture and advance the kingdom of God in every sphere of life — from art and science to their homes and communities.",
       color: "text-primary",
     },
     {
       icon: Eye,
       title: "Our Vision",
       description:
-        "A world where every person has access to the resources, opportunities, and support they need to thrive, regardless of their circumstances. We envision communities united in faith and compassion, working together to create lasting change.",
+        "To provide transformative Biblically integrated education that equips students to excel academically, grow in their relationship with Jesus Christ, and impact their world for God’s glory.",
       color: "text-secondary",
     },
     {

@@ -17,7 +17,7 @@ export function Footer() {
               />
               <div className="flex flex-col">
                 <span className="font-bold text-base leading-tight">Faith Christian School</span>
-                <span className="text-xs text-primary-foreground/80">Foundation</span>
+                <span className="text-xs text-primary-foreground/80">Ministries</span>
               </div>
             </div>
             <p className="text-sm text-primary-foreground/80 leading-relaxed mb-4">
@@ -131,7 +131,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 text-center text-sm text-primary-foreground/60">
-          <p>© {new Date().getFullYear()} Faith Christian School Foundation. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Faith Christian School Ministries. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -52,10 +52,11 @@ export function AboutSection() {
             </h2>
 
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Faith Christian School Foundation is dedicated to transforming lives and strengthening communities through
-              faith-based initiatives. We believe in the power of compassion, service, and collective action to create
-              lasting positive change. Our programs reach families and individuals, providing support, resources, and
-              hope for a brighter future.
+              Is Centered Around Children <br />
+
+Their development comes first in every aspect of our work. All the choices we make are motivated by the desire to raise them to be self-confident, reliable, respectable individuals. We believe a good development has its foundation in Christian values. We do not separate children from our work but involve them where we see the opportunity for them to develop or express themselves.
+
+Actions can result in families or society treating a child or an adult as a nobody. Some feel then nobody is worthy of any effort, money, or problems.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-6">
