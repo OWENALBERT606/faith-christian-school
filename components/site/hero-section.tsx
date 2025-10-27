@@ -175,7 +175,7 @@ const slides: Slide[] = [
     subtitle: "Faith in Action",
     description:
       "Bringing positive change through faith-based initiatives and programs.",
-    image: "/close-up-community-concept-with-hands.jpg",
+    image: "/jpegmini_optimized/20251016_154402.jpg",
     alt: "Happy students learning with a teacher",
   },
 ];

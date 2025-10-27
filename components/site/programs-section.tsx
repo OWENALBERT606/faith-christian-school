@@ -116,7 +116,7 @@ export function ProgramsSection() {
       description:
         "Empowering children and adults with scholarships, school kits, and literacy resources.",
       color: "bg-accent/10 text-accent-foreground",
-      image: "/medium-shot-smiley-kids-window.jpg",
+      image: "/jpegmini_optimized/20251016_155253.jpg",
       alt: "Children studying with books in a classroom",
     },
     {
@@ -143,7 +143,7 @@ export function ProgramsSection() {
       description:
         "Providing clothing, hygiene supplies, and essential resources to those most in need.",
       color: "bg-accent/10 text-accent-foreground",
-      image: "/END-1.jpg",
+      image: "/jpegmini_optimized/20251016_154735.jpg",
       alt: "Clothing and supplies neatly arranged for donation",
     },
   ];
@@ -203,7 +203,7 @@ export function ProgramsSection() {
                   {program.description}
                 </p>
 
-                <div className="mt-5">
+                {/* <div className="mt-5">
                   <a
                     href="#"
                     className="inline-flex items-center gap-2 text-sm font-semibold text-secondary hover:underline"
@@ -211,7 +211,7 @@ export function ProgramsSection() {
                     Learn more
                     <ArrowRight className="h-4 w-4" />
                   </a>
-                </div>
+                </div> */}
               </CardContent>
             </Card>
           ))}

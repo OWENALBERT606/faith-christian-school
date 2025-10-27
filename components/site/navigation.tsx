@@ -167,7 +167,7 @@ export function Navigation() {
               <span className="leading-tight text-sm font-bold text-primary sm:text-base">
                 Faith Christian School
               </span>
-              <span className="text-xs text-muted-foreground">Foundation</span>
+              <span className="text-xs text-muted-foreground">Ministries</span>
             </div>
           </div>
 

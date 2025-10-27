@@ -34,7 +34,7 @@ export default async function Page() {
       <CampaignsSection campaigns={campaigns} />
       <EventsSection events={events} />
       <StatsSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <CTASection />
     </div>
   )
