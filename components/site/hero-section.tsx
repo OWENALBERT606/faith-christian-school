@@ -144,6 +144,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import Link from "next/link";
 
 type Slide = {
   title: string;
@@ -251,19 +252,24 @@ export function HeroSection() {
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row animate-fade-in-up delay-600">
+             <Link href="/donate">
               <Button
                 size="lg"
                 className="bg-orange-600 px-8 py-6 text-lg font-semibold text-white hover:bg-orange-700"
               >
                 Donate Now
               </Button>
+             
+             </Link>
+             <Link href="/involve">
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-white bg-transparent px-8 py-6 text-lg font-semibold text-white hover:bg-white hover:text-orange-700"
+                className="bg-transparent px-8 py-6 text-lg font-semibold text-white hover:bg-white hover:text-orange-900 border-2 border-white"
               >
                 Get Involved
               </Button>
+             </Link>
             </div>
           </div>
         </div>
