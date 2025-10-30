@@ -34,6 +34,7 @@ export function CTASection() {
               Donate Now
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
+           <Link href="/donate">
             <Button
               size="lg"
               variant="outline"
@@ -41,6 +42,7 @@ export function CTASection() {
             >
               Become a Volunteer
             </Button>
+           </Link>
           </div>
 
           <div className="mt-12 grid sm:grid-cols-3 gap-6 text-left">
