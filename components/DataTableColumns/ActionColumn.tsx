@@ -29,6 +29,7 @@ import { deleteCategory } from "@/actions/categories";
 import { deleteEvent } from "@/actions/events";
 import { deleteCampaign } from "@/actions/campaigns";
 import { deleteStory } from "@/actions/stories";
+import { deleteChild } from "@/actions/sponsor";
 
 
 type ActionColumnProps = {
@@ -55,6 +56,12 @@ export default function ActionColumn({
         toast.success(`${model} Deleted Successfully`);
       }else if (model === "story") {
         const res = await deleteStory(id);
+        if (res?.ok) {
+          window.location.reload();
+        }
+        toast.success(`${model} Deleted Successfully`);
+      }else if (model === "child") {
+        const res = await deleteChild(id);
         if (res?.ok) {
           window.location.reload();
         }

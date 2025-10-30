@@ -10,7 +10,7 @@ interface Child {
   name: string
   age: number
   location: string
-  image: string
+  imageUrl: string
   background: string
 }
 
@@ -23,7 +23,7 @@ export function ChildCard({ child, onSponsor }: ChildCardProps) {
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow">
       <div className="relative h-64 w-full">
-        <Image src={child.image || "/placeholder.svg"} alt={child.name} fill className="object-cover" />
+        <Image src={child.imageUrl || "/placeholder.svg"} alt={child.name} fill className="object-cover" />
       </div>
       <CardContent className="pt-6">
         <h3 className="text-2xl font-bold mb-2">{child.name}</h3>
@@ -37,7 +37,7 @@ export function ChildCard({ child, onSponsor }: ChildCardProps) {
             <span>{child.location}</span>
           </div>
         </div>
-        <p className="text-muted-foreground leading-relaxed">{child.background}</p>
+        <p className="text-muted-foreground leading-relaxed">{child.background.slice(0,94)}</p>
       </CardContent>
       <CardFooter>
         <Button onClick={onSponsor} className="w-full" size="lg">

@@ -187,3 +187,63 @@ model Story {
   @@index([categoryId])
   @@index([slug])
 }
+
+
+// prisma/schema.prisma
+
+enum SponsorshipStatus {
+  ACTIVE
+  PAUSED
+  ENDED
+}
+
+model Sponsor {
+  id            String         @id @default(cuid())
+  fullName      String
+  email         String         @unique
+  phone         String?
+  address       String?
+
+  sponsorships  Sponsorship[]
+
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+}
+
+model Child {
+  id            String         @id @default(cuid())
+  /// Optional: keep your numeric sample ids for easy mapping from mock data
+  extId         Int?           @unique
+  name          String
+  age           Int
+  location      String
+  imageUrl      String?
+  background    String?
+  isFeatured    Boolean        @default(false)
+
+  sponsorships  Sponsorship[]
+
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+}
+
+model Sponsorship {
+  id            String             @id @default(cuid())
+  sponsorId     String
+  childId       String
+  monthlyAmount Float              @default(50)
+  status        SponsorshipStatus  @default(ACTIVE)
+  startDate     DateTime           @default(now())
+  endDate       DateTime?
+  agreeToTerms  Boolean            @default(true)
+
+  /// simple “only one active sponsorship per child” guard
+  active        Boolean            @default(true)
+
+  sponsor       Sponsor            @relation(fields: [sponsorId], references: [id], onDelete: Cascade)
+  child         Child              @relation(fields: [childId], references: [id], onDelete: Cascade)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  @@unique([childId, active]) // at most one active sponsorship per child
+}

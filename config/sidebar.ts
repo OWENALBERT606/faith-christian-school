@@ -19,6 +19,7 @@ import {
   Presentation,
   Settings,
   Speaker,
+  User2,
   Users,
   Users2,
 } from "lucide-react";
@@ -147,6 +148,20 @@ export const sidebarLinks: ISidebarLink[] = [
     dropdown: false,
     href: "/dashboard/stories",
     permission: "stories.read",
+  },
+  {
+    title: "Stories",
+    icon: BookOpen,
+    dropdown: false,
+    href: "/dashboard/stories",
+    permission: "stories.read",
+  },
+  {
+    title: "Children",
+    icon: User2,
+    dropdown: false,
+    href: "/dashboard/children",
+    permission: "children.read",
   },
   {
     title: "Messages",

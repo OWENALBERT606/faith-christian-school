@@ -24,6 +24,12 @@ export const ourFileRouter = {
       return { uploadedBy: "ADMIN" };
     }
   ),
+  childImage: f({ image: { maxFileSize: "2MB" } }).onUploadComplete(
+    async ({ metadata, file }) => {
+      console.log("file url", file.url);
+      return { uploadedBy: "ADMIN" };
+    }
+  ),
   storyImage: f({ image: { maxFileSize: "2MB" } }).onUploadComplete(
     async ({ metadata, file }) => {
       console.log("file url", file.url);
