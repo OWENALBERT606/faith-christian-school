@@ -18,7 +18,7 @@ export function AboutHero() {
           className={`text-center transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 text-balance">
-            About Our Foundation
+            About Our Ministries
           </h1>
           <p className="text-xl sm:text-2xl text-white/90 max-w-3xl mx-auto text-balance">
             Transforming lives through faith, compassion, and community action

@@ -97,7 +97,7 @@ export default function ContactPage() {
                           href="mailto:faithchristianschool2@gmail.com"
                           className="text-sm text-muted-foreground hover:text-primary"
                         >
-                          faithchristianschool2@gmail.com
+                          faithchristianschool12@gmail.com
                         </a>
                       </div>
                     </div>
