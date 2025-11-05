@@ -160,7 +160,7 @@ const slides: Slide[] = [
     subtitle: "Making a Difference Together",
     description:
       "Join us in our mission to empower communities and create lasting change.",
-    image: "/african-children-enjoying-life.jpg",
+    image: "/close-up-team-hand-shake.jpg",
     alt: "Children smiling outdoors",
   },
   {

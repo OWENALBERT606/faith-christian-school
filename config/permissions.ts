@@ -85,6 +85,26 @@ export const permissions: ModulePermissions[] = [
     },
   },
   {
+    display: "Partnerships",
+    name: "partnerships",
+    permissions: {
+      create: "partnerships.create",
+      read: "partnerships.read",
+      update: "partnerships.update",
+      delete: "partnerships.delete",
+    },
+  },
+  {
+    display: "Volunteers",
+    name: "volunteers",
+    permissions: {
+      create: "volunteers.create",
+      read: "volunteers.read",
+      update: "volunteers.update",
+      delete: "volunteers.delete",
+    },
+  },
+  {
     display: "Campaigns",
     name: "campaigns",
     permissions: {
