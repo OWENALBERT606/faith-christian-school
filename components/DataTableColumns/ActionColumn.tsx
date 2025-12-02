@@ -32,6 +32,7 @@ import { deleteStory } from "@/actions/stories";
 import { deleteChild } from "@/actions/sponsor";
 import { deletePartnership } from "@/actions/partnerships";
 import { deleteVolunteer } from "@/actions/volunteers";
+import { deleteBanner } from "@/actions/banners";
 
 
 type ActionColumnProps = {
@@ -62,7 +63,14 @@ export default function ActionColumn({
           window.location.reload();
         }
         toast.success(`${model} Deleted Successfully`);
-      }else if (model === "child") {
+      }else if (model === "banner") {
+        const res = await deleteBanner(id);
+        if (res?.ok) {
+          window.location.reload();
+        }
+        toast.success(`${model} Deleted Successfully`);
+      }
+      else if (model === "child") {
         const res = await deleteChild(id);
         if (res?.ok) {
           window.location.reload();

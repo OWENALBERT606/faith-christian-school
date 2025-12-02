@@ -16,17 +16,20 @@ import { EventsSection } from '@/components/site/events-section'
 import { getEvents } from '@/actions/events'
 import { getCampaigns } from '@/actions/campaigns'
 import { getStories } from '@/actions/stories'
+import { getBanners } from '@/actions/banners'
 
 export default async function Page() {
       const campaigns = (await getCampaigns()) ?? [];
       const events = (await getEvents()) ?? [];
       const stories = (await getStories()) ?? [];
+      const banners = (await getBanners()) ?? [];
+      
           
       
   
   return (
     <div>
-      <HeroSection />
+      <HeroSection banners={banners}/>
       <AboutSection />
       <ProgramsSection />
       <ValuesSection />
