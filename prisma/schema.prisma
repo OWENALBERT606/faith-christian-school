@@ -123,6 +123,7 @@ model Event {
   description     String
   longDescription String       @db.Text
   highlights      String[]     // requires PostgreSQL
+  registrations   EventRegistration[] // <-- ADD THIS LINE
   schedule        Json         // array of { time: string; activity: string }
   status          EventStatus  @default(UPCOMING)
   createdAt       DateTime     @default(now())
@@ -290,4 +291,33 @@ model Sponsorship {
   updatedAt     DateTime       @updatedAt
 
   @@unique([childId, active]) // at most one active sponsorship per child
+}
+
+
+enum RegistrationStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  ATTENDED
+}
+
+model EventRegistration {
+  id                  String             @id @default(cuid())
+  eventId             String
+  event               Event              @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  fullName            String
+  email               String
+  phone               String
+  numberOfGuests      Int                @default(1)
+  specialRequirements String?            @db.Text
+  status              RegistrationStatus @default(PENDING)
+  registeredAt        DateTime           @default(now())
+  confirmedAt         DateTime?
+  createdAt           DateTime           @default(now())
+  updatedAt           DateTime           @updatedAt
+
+  @@index([eventId])
+  @@index([email])
+  @@index([status])
+  @@index([createdAt])
 }
